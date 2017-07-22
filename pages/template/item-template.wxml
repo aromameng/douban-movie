@@ -1,0 +1,19 @@
+<template name="movieItem">
+    <navigator url="../details/details?id={{item.id}}">
+      <image class="item-image" src="{{item.images.medium}}"></image>
+      <text class="item-title">{{item.title}}</text>
+      <view class="item-rating">
+        <view class="rank">
+          <label class="rating-stars c-inline" data-rating="{{item.rating.average/2}}" wx:if="{{item.rating.average > 0}}">      
+            <text class="rating-star {{ item.rating.average/2 > 0 ? 'rating-star-small-full': 'rating-star-small-gray'}}"></text>
+            <text class="rating-star {{ item.rating.average/2 > 1 ? 'rating-star-small-full': 'rating-star-small-gray'}}"></text>
+            <text class="rating-star {{ item.rating.average/2 > 2 ? 'rating-star-small-full': 'rating-star-small-gray'}}"></text>
+            <text class="rating-star {{ item.rating.average/2 > 3 ? 'rating-star-small-full': 'rating-star-small-gray'}}"></text>
+            <text class="rating-star {{ item.rating.average/2 > 4 ? 'rating-star-small-full': 'rating-star-small-gray'}}"></text>
+          </label>
+          <text class="c-inline" wx:if="{{item.rating.average > 0}}">{{item.rating.average}}</text>
+          <text class="c-inline c-gray" wx:if="{{item.rating.average==0}}">暂无评分</text>
+        </view>
+      </view>
+    </navigator>
+</template>

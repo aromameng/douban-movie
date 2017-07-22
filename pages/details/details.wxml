@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<view class="container details-page">
+  <view class="m-image">
+    <image class="img" src="{{info.images.large}}"></image>
+  </view>
+  <view class="m-main">
+    <text class="m-title">{{info.title}}</text>
+    <view class="m-abstract">
+      <view> {{info.year}}年 / <text wx:key="*this" wx:for="{{info.genres}}">{{item}}</text></view>
+      <view>导演：<text wx:key="item.id" wx:for="{{directors}}">{{item.name}}</text></view>
+      <view>演员：<text wx:key="item.id" wx:for="{{casts}}">{{item.name}}</text></view>
+    </view>
+    <text class="s-title">简介</text>
+    <text class="m-summary">{{info.summary}}</text>
+  </view>
+</view>

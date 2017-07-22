@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<import src="/pages/template/item-template.wxml" />
+<view class="container list-page">
+  <view class="page-session page-session-spacing">
+    <text class="s-title">{{title}}</text>
+    <view class="session-content">
+      <scroll-view class="session-scroll"  style="width:{{windowWidth}}px; height: {{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+        <view class="items">
+          <label class="item" wx:key="item.id" wx:for="{{items}}">
+                <template is="movieItem" data="{{item}}" />
+          </label>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
